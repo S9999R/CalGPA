@@ -161,5 +161,6 @@ int fhour =0;
    cout<<"المعدل الحالي : "<<fgpa<<endl;
    cout<<"المعدل الفصلي: "<<tgpa<<endl;
    cout<<"المعدل التراكمي (المتوقع): "<<Ngpa<<endl;
+   cout<<"الساعات النوعية: "<<Nhour;
     return 0;
 }
