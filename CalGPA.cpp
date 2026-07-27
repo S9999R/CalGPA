@@ -14,52 +14,8 @@ struct Sub
     string letter;
  };
 
-int main(){
-    int Thours,N;
- float tpoints, fgpa;
- 
-  
-Sub H[size];
-
-  cout<< "enter the total hours :"<<endl; //حساب المعدل الحالي
-  cin>>Thours;
-
-  cout<<"enter the total points :"<<endl;
-  cin>>tpoints;
-
-  fgpa = tpoints/Thours;
- fgpa =floor(fgpa * 100) / 100;
-
- do
-{
-   cout<<"how many course are you taking next term? (max is 10) :";
- 
- cin>>N;
- if (N>10 || N<=0)
- {
-   cout<<"enter 10 or less\n";
- }
- 
-} while (N>10 || N<=0);
- 
- for(int i=0;i<N;i++){ //طلب المواد الي راح يسجله حق الترم الجاي
- 
-
-
- cout<<"name of the course:\n ";
- cin.ignore();
- getline(cin,H[i].name);
-
- cout<<"how many hours(1-4) :\n";
- cin>>H[i].hours;
-
- cout<<"grade(from 0-100 only):\n";
- cin>>H[i].grade;
-
-
- }
-
- for (int i = 0; i < N; i++)// نعطي النقاط لكل مادة حسب القريد
+void arrayCal(Sub H[],int SS ){
+   for (int i = 0; i < SS; i++)// نعطي النقاط لكل مادة حسب القريد
  {
 
    if (H[i].grade>=95)
@@ -125,6 +81,56 @@ Sub H[size];
    }
 
  }
+}
+
+int main(){
+    int Thours,N;
+ float tpoints, fgpa;
+
+  
+Sub H[size];
+
+  cout<< "enter the total hours :"<<endl; //حساب المعدل الحالي
+  cin>>Thours;
+
+  cout<<"enter the total points :"<<endl;
+  cin>>tpoints;
+
+  fgpa = tpoints/Thours;
+ fgpa =floor(fgpa * 100) / 100;
+
+ do
+{
+   cout<<"how many course are you taking next term? (max is 10) :";
+ 
+ cin>>N;
+ if (N>10 || N<=0)
+ {
+   cout<<"enter 10 or less\n";
+ }
+ 
+} while (N>10 || N<=0);
+ 
+ for(int i=0;i<N;i++){ //طلب المواد الي راح يسجله حق الترم الجاي
+ 
+
+
+ cout<<"name of the course:\n ";
+ cin.ignore();
+ getline(cin,H[i].name);
+
+ cout<<"how many hours(1-4) :\n";
+ cin>>H[i].hours;
+
+ cout<<"grade(from 0-100 only):\n";
+ cin>>H[i].grade;
+
+
+ }
+
+arrayCal(H,N);
+
+ 
 float fpoint =0;
 int fhour =0;
   for (int i = 0; i < N; i++) //حساب النقاط والساعات للترم الجاي
